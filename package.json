@@ -1,0 +1,16 @@
+{
+  "name": "biblioteca-online",
+  "version": "1.0.0",
+  "description": "Biblioteca online con JavaScript",
+  "scripts": {
+    "test": "jest --verbose"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "testMatch": ["**/tests/**/*.js"]
+  }
+}
