@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #f5f5f5;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+h2 {
+    margin: 18px 0 10px;
+    font-size: 1.1em;
+    color: #444;
+}
+
+nav {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 8px;
+}
+
+.tab {
+    padding: 8px 18px;
+    border: 1px solid #bbb;
+    background: #e8e8e8;
+    cursor: pointer;
+    border-radius: 4px 4px 0 0;
+    font-size: 0.95em;
+}
+
+.tab:hover {
+    background: #ddd;
+}
+
+.tab.activa {
+    background: #fff;
+    border-bottom: 2px solid #fff;
+    font-weight: bold;
+}
+
+.seccion {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.oculto {
+    display: none;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+input, select {
+    padding: 7px 10px;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #666;
+}
+
+button {
+    padding: 7px 16px;
+    border: none;
+    background: #4a7c59;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+button:hover {
+    background: #3d6a4b;
+}
+
+.btn-eliminar {
+    background: #b04040;
+    font-size: 0.8em;
+    padding: 4px 10px;
+}
+
+.btn-eliminar:hover {
+    background: #943333;
+}
+
+.btn-devolver {
+    background: #3a6ea5;
+    font-size: 0.8em;
+    padding: 4px 10px;
+}
+
+.btn-devolver:hover {
+    background: #2e5a87;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 7px 10px;
+    text-align: left;
+}
+
+th {
+    background: #eee;
+}
+
+tr:nth-child(even) {
+    background: #fafafa;
+}
+
+#busqueda {
+    width: 100%;
+}
+
+#mensaje {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 18px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    display: none;
+    color: white;
+}
+
+#mensaje.exito {
+    background: #4a7c59;
+    display: block;
+}
+
+#mensaje.error {
+    background: #b04040;
+    display: block;
+}

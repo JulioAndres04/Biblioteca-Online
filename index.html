@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Online</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Biblioteca Online</h1>
+
+    <nav>
+        <button class="tab activa" onclick="mostrarSeccion('libros')">Libros</button>
+        <button class="tab" onclick="mostrarSeccion('usuarios')">Usuarios</button>
+        <button class="tab" onclick="mostrarSeccion('prestamos')">Préstamos</button>
+    </nav>
+
+    <!-- LIBROS -->
+    <div id="libros" class="seccion">
+        <h2>Agregar libro</h2>
+        <form id="formLibro" onsubmit="agregarLibro(event)">
+            <input type="text" id="titulo" placeholder="Título" required>
+            <input type="text" id="autor" placeholder="Autor" required>
+            <input type="text" id="genero" placeholder="Género" required>
+            <input type="number" id="anio" placeholder="Año" required>
+            <input type="number" id="copias" placeholder="Copias" min="1" required>
+            <button type="submit">Agregar</button>
+        </form>
+
+        <h2>Buscar</h2>
+        <input type="text" id="busqueda" placeholder="Buscar por título o autor..." oninput="buscarLibros()">
+
+        <h2>Catálogo</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Título</th>
+                    <th>Autor</th>
+                    <th>Género</th>
+                    <th>Año</th>
+                    <th>Disponibles</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tablaLibros"></tbody>
+        </table>
+    </div>
+
+    <!-- USUARIOS -->
+    <div id="usuarios" class="seccion oculto">
+        <h2>Registrar usuario</h2>
+        <form id="formUsuario" onsubmit="registrarUsuario(event)">
+            <input type="text" id="nombre" placeholder="Nombre" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <button type="submit">Registrar</button>
+        </form>
+
+        <h2>Usuarios registrados</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Fecha registro</th>
+                </tr>
+            </thead>
+            <tbody id="tablaUsuarios"></tbody>
+        </table>
+    </div>
+
+    <!-- PRESTAMOS -->
+    <div id="prestamos" class="seccion oculto">
+        <h2>Nuevo préstamo</h2>
+        <form id="formPrestamo" onsubmit="prestarLibro(event)">
+            <select id="selUsuario" required>
+                <option value="">-- Seleccionar usuario --</option>
+            </select>
+            <select id="selLibro" required>
+                <option value="">-- Seleccionar libro --</option>
+            </select>
+            <button type="submit">Prestar</button>
+        </form>
+
+        <h2>Historial de préstamos</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Usuario</th>
+                    <th>Libro</th>
+                    <th>Fecha préstamo</th>
+                    <th>Fecha devolución</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tablaPrestamos"></tbody>
+        </table>
+    </div>
+
+    <div id="mensaje"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
